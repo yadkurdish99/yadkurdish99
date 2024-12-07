@@ -1,18 +1,240 @@
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Yad's Strategic World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+        a {
+            text-decoration: none;
+            color: #06d6a0;
+        }
 
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
+        header {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
 
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem 
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
-Gemfile.lock
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #222;
+            padding: 10px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            padding: 10px 15px;
+            font-weight: bold;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            border-bottom: 2px solid #06d6a0;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .dentistry {
+            background: #1b4332;
+        }
+
+        .detective {
+            background: #00203f;
+        }
+
+        .strategy {
+            background: #101820;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #06d6a0;
+        }
+
+        section p {
+            font-size: 1.2rem;
+        }
+
+        /* Cool Buttons */
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #06d6a0;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Plum Crazy Color */
+        .plum-crazy {
+            color: #9b4d96; /* Plum Crazy */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #06d6a0;
+        }
+
+        /* Special Animations */
+        @keyframes rain {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -300px 600px;
+            }
+        }
+
+        .rainy {
+            background-color: #003366;
+            animation: rain 4s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="plum-crazy">Dr. Yad's Strategic World</h1>
+        <p>Where Dentistry Meets Strategy and Discovery</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#dentistry" onclick="showSection('dentistry')">Dentistry</a>
+        <a href="#detective" onclick="showSection('detective')">Detective</a>
+        <a href="#strategy" onclick="showSection('strategy')">Strategy</a>
+    </nav>
+
+    <!-- Section for Dentistry -->
+    <section id="dentistry" class="dentistry">
+        <h2 class="plum-crazy">Smiles with Precision</h2>
+        <p>Explore the world of dentistry, where every detail matters.</p>
+        <button class="btn" onclick="showQuotes('dentistry')">Learn More</button>
+    </section>
+
+    <!-- Section for Detective -->
+    <section id="detective" class="detective">
+        <h2 class="plum-crazy">Cracking the Case</h2>
+        <p>Investigate mysteries and discover the unknown.</p>
+        <button class="btn" onclick="showQuotes('detective')">Start Solving</button>
+    </section>
+
+    <!-- Section for Strategy -->
+    <section id="strategy" class="strategy">
+        <h2 class="plum-crazy">The Calm Mind Wins</h2>
+        <p>Apply logic and strategy to lead with purpose.</p>
+        <button class="btn">Read My Blog</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created by <strong>Yad</strong> &copy; 2024. All Rights Reserved.</p>
+        <a href="#home" onclick="showSection('home')">Back to Top</a>
+    </footer>
+
+    <!-- Dexter Quotes Page (Hidden) -->
+    <div id="dexter-quotes" class="rainy" style="display:none; padding: 20px;">
+        <h1 class="plum-crazy">Dexter's Quotes</h1>
+        <div class="quote">"I am a monster. But I am your monster."</div>
+        <div class="quote">"The only thing that matters is the mission."</div>
+        <div class="quote">"I am what I am, and I don't apologize for it."</div>
+        <footer>
+            <a href="#home" onclick="showSection('home')">Back to Home</a>
+        </footer>
+    </div>
+
+    <!-- Dentistry Quotes Page (Hidden) -->
+    <div id="dentistry-quotes" class="rainy" style="display:none; padding: 20px;">
+        <h1 class="plum-crazy">Dentistry Quotes</h1>
+        <div class="quote">"A smile is a curve that sets everything straight." - Phyllis Diller</div>
+        <div class="quote">"Dentistry is not expensive, neglect is." - Unknown</div>
+        <div class="quote">"Every tooth in a man’s head is more valuable than a diamond." - Miguel de Cervantes</div>
+        <footer>
+            <a href="#home" onclick="showSection('home')">Back to Home</a>
+        </footer>
+    </div>
+
+    <!-- JavaScript to Control Sections -->
+    <script>
+        function showQuotes(section) {
+            // Hide all sections
+            document.getElementById("dentistry").style.display = "none";
+            document.getElementById("detective").style.display = "none";
+            document.getElementById("strategy").style.display = "none";
+            document.getElementById("dexter-quotes").style.display = "none";
+            document.getElementById("dentistry-quotes").style.display = "none";
+
+            // Show the relevant quotes section
+            if (section === 'dentistry') {
+                document.getElementById("dentistry-quotes").style.display = "block";
+            } else if (section === 'detective') {
+                document.getElementById("dexter-quotes").style.display = "block";
+            }
+        }
+
+        function showSection(section) {
+            // Hide all sections
+            document.getElementById("dentistry").style.display = "none";
+            document.getElementById("detective").style.display = "none";
+            document.getElementById("strategy").style.display = "none";
+            document.getElementById("dexter-quotes").style.display = "none";
+            document.getElementById("dentistry-quotes").style.display = "none";
+
+            // Show the relevant section
+            if (section === 'dentistry') {
+                document.getElementById("dentistry").style.display = "block";
+            } else if (section === 'detective') {
+                document.getElementById("detective").style.display = "block";
+            } else if (section === 'strategy') {
+                document.getElementById("strategy").style.display = "block";
+            } else {
+                document.getElementById("home").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
